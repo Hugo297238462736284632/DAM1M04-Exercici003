@@ -1,2 +1,2 @@
 Hugo Aulla Cobo
-Ariadna Martinez Marin
+y Ariadna Martinez Marin
