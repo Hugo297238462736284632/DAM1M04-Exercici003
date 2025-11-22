@@ -1140,3 +1140,152 @@ body {
 		grid-column: 1 / 2;
 	}
 }
+
+/* ======================================= */
+/* === AJUSTES PARA DISPOSITIVOS MÓVILES === */
+/* ======================================= */
+
+@media (max-width: 768px) {
+    /* --- Contenedor y Secciones --- */
+    /* Asegura que el contenido nunca toque los bordes laterales */
+    .container {
+        padding: 0 20px;
+    }
+
+    /* --- Header (Encabezado) --- */
+
+    /* 1. Ocultar enlaces de navegación y dejar solo el logo y el botón de compra */
+    .main-nav {
+        /* Oculta los enlaces de "Overview", "Tech Specs" y "User Guide" */
+        display: flex;
+        justify-content: flex-end; /* Alinea lo que queda (el botón 'Buy') a la derecha */
+    }
+
+    .main-nav .nav-link {
+        /* Oculta los enlaces individuales que no son el botón */
+        display: none; 
+    }
+
+    .main-nav .btn-buy {
+        /* Asegura que el botón de compra sí se muestre */
+        display: block; 
+    }
+    
+    .header-content {
+        /* Alinea el logo y el botón en el centro verticalmente y con espacio entre ellos */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0; /* Más relleno vertical */
+    }
+
+    /* --- Sección Hero (Principal) --- */
+
+    .hero-section {
+        padding-top: 40px; /* Reducir el espacio superior */
+        padding-bottom: 40px; /* Reducir el espacio inferior */
+    }
+
+    .hero-title {
+        /* Reducir el tamaño de la fuente para que quepa mejor */
+        font-size: 32px; 
+    }
+
+    .hero-description {
+        /* Asegurar que la descripción no sea demasiado ancha */
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .hero-image-container {
+        /* Reducir el margen superior del mock-up */
+        margin-top: 30px; 
+    }
+
+    /* --- Secciones de Contenido (Vector Tools, Photo Editing, etc.) --- */
+    
+    .section-title {
+        /* Reducir el tamaño del título de sección */
+        font-size: 28px; 
+    }
+
+    .section-description {
+        font-size: 16px; 
+    }
+
+    /* --- Disposición de Columnas (Dos Columnas a Una Columna) --- */
+    
+    .two-column-layout, 
+    .layout-ml-features, 
+    .layout-reverse {
+        /* Convertir el layout de dos columnas a una sola columna */
+        flex-direction: column;
+        gap: 40px; /* Espacio entre los bloques */
+    }
+
+    .image-content, 
+    .text-content {
+        /* Asegurar que ambos bloques de las columnas ocupen todo el ancho */
+        width: 100%;
+    }
+
+    /* Invertir el orden para que la imagen siempre quede primero en móvil, si aplica */
+    .layout-reverse {
+        flex-direction: column-reverse; /* Revertir el orden solo en móviles para mantener la consistencia */
+    }
+
+    /* --- Grillas (Grids) --- */
+
+    /* Convertir todas las grillas de 3 columnas a 1 o 2 columnas si es necesario */
+    .features-grid,
+    .design-features-grid,
+    .retouch-features-grid,
+    .effects-features-grid,
+    .painting-features-grid,
+    .mac-features-grid {
+        /* Usaremos un display block simple para apilar los elementos */
+        display: block; 
+        gap: 0;
+    }
+    
+    /* Asegurar que las cajas de las grillas ocupen todo el ancho y tengan espacio vertical */
+    .feature-box,
+    .design-feature-box,
+    .retouch-feature-box,
+    .effects-feature-box,
+    .painting-feature-box,
+    .mac-feature-box,
+    .full-width-feature {
+        width: 100%;
+        margin-bottom: 40px; /* Espacio vertical entre cajas apiladas */
+    }
+
+    .tech-logos-grid {
+        /* La grilla de logos puede seguir siendo una grilla, pero con más columnas */
+        grid-template-columns: repeat(3, 1fr); /* 3 logos por fila */
+        gap: 20px;
+    }
+
+    .ml-feature-item {
+        /* Ajustar la grilla de características ML a 2 columnas */
+        width: 48%; /* 2 elementos por fila con espacio entre ellos */
+        margin-bottom: 20px;
+    }
+    
+    /* --- Footer (Pie de Página) --- */
+    
+    .footer-columns {
+        /* Las columnas del footer también se apilan */
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-col {
+        /* Asegurar que la información del copyright/logo se vea bien */
+        margin-bottom: 20px; 
+    }
+
+    .footer-col h3 {
+        margin-bottom: 10px; /* Reducir el espacio después del título de columna */
+    }
+}
